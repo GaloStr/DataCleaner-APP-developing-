@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import cleaner
 import modify
+import graficos  # Importar el archivo graficos.py
 
 def cargar_datos():
     """Carga los datos desde un archivo subido y lo guarda en session_state."""
@@ -60,8 +61,7 @@ def main():
     elif choice == "Visión de Tabla":
         mostrar_tabla()
     elif choice == "Gráficos":
-        st.subheader("Generación de Gráficos")
-        st.info("Funcionalidades de gráficos en desarrollo...")
+        graficos.generar_graficos_interactivos()  # Llamar a la función de gráficos
 
     if 'df' in st.session_state and st.session_state['df'] is not None:
         st.sidebar.subheader("Descarga")
